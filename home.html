@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <style>
+        body    {
+            background-image: linear-gradient(45deg, 
+            rgb(39, 119, 223),
+            rgb(39, 162, 219),
+            rgb(216, 191, 81),
+            rgb(73, 61, 42),
+            rgb(211, 82, 7));
+        } 
+        #rotated    {
+            position: absolute;
+            background-image: url("ws_wave_riding.jpg");
+            top: -10px;
+            height: 100% ;
+            width: 300%;
+            left: -200px;
+            background-repeat: no-repeat;
+            -webkit-transform: rotate(10deg);
+            transform: rotate(-2deg);
+            z-index: -1;
+            opacity: 0.7;
+            transform: rotate(-3deg);
+            transition: 20s;
+        }
+        #rotated:hover  {
+            top: 50px;
+            transform: rotate(5deg);
+            transition: 20s;
+
+        }
+        #reg_bk     {          
+            position: fixed;
+            background-image: linear-gradient(65deg, 
+            rgb(223, 91, 39),
+
+            rgb(65, 221, 226),
+            
+            rgb(77, 230, 39));
+        }
+        #top_list  {
+            position: absolute;
+            top: 90px;
+            list-style-type: none;
+            text-align: center;
+            border-color: rgb(15, 100, 180);
+        }
+        .list1  {
+            transition-duration: 0.75s;
+            display: inline;
+            float: right;
+            display: block;
+            background-color: #3097d37c;
+            color: rgb(22, 57, 214); ;
+            padding: 10px 40px 10px 40px;
+            width: 70px;
+            height: 5px;
+            margin-left: 15px;
+            border-radius: 45%;
+            border-top: 5px solid rgb(22, 57, 214);
+            border-bottom: 5px solid rgb(22, 57, 214);
+            font-size: 22px;
+            line-height: 0.2;
+
+
+        }
+        .list1:hover    {
+            transition-duration: 0.75s;
+            background-color: #111374;
+            color:#73c4f3;
+            border-top: 8px solid rgb(22, 57, 214);
+            border-bottom: 8px solid rgb(22, 57, 214);
+            border-left: 1px solid rgb(22, 57, 214);
+            border-right: 1px solid rgb(22, 57, 214);
+            font-size: 30px;
+            width: 90px;
+            height: 7px;
+        }
+        #about  {
+            
+            animation: ul_silde 0.25s;
+        }
+        #signup  {
+            animation: ul_silde 0.25s;
+        }
+        #gallary  {
+            animation: ul_silde 0.75s;
+        }
+        #about  {
+            animation: ul_silde 0.25s;
+        }
+        #ws_intro   {
+            transition: 0.75s;
+            animation: text_box;
+            text-align: justify;
+            border-top: 12px solid rgb(46, 115, 204);
+            border-bottom: 10px solid rgb(46, 115, 204);
+            border-left: 3px solid rgb(46, 115, 204);
+            border-radius: 25px 45px 25px 45px;
+            max-width: 150px;
+            max-height: 400px;
+            background-color: #03dac5;
+            margin-top: 50px;
+            margin-right: 30px;
+            padding-top: 20;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            font-size: 8px;
+            font-weight: bold;
+            color: rgb(29, 2, 126);
+            position: absolute;
+            top:550px;
+            opacity: 0.4;
+            right: 20px;
+        }
+        #ws_intro:hover   {
+            opacity: 1;
+            max-height: 450px;
+            max-width: 450px;
+            padding-top: 20px;
+            transition: 0.75s;
+            font-size: 20px;
+            z-index: +2;
+            top: 450px;
+            right: 60px;
+            border-right: 12px solid rgb(46, 115, 204);
+            border-left: 0px solid rgb(46, 115, 204);
+            border-top: 0px solid rgb(46, 115, 204);
+
+            
+        }
+        #s_intro   {
+            transition: 0.75s;
+            animation: text_box;
+            text-align: justify;
+            border-top: 20px solid rgb(46, 115, 204);
+            border-bottom: 10px solid rgb(46, 115, 204);
+            border-radius: 25px 25px 25px 25px;
+            max-width: 150px;
+            max-height: 400px;
+            background-color: #03dac5;
+            margin-top: 50px;
+            margin-right: 30px;
+            padding-top: 20;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            font-size: 8px;
+            font-weight: bold;
+            color: rgb(29, 2, 126);
+            position: absolute;
+            top:550px;
+            opacity: 0.4;
+            right: 250px;
+            list-style-position: inside;
+        }
+        #s_intro:hover   {
+            opacity: 1;
+            max-height: 450px;
+            max-width: 450px;
+            padding-top: 20px;
+            
+            transition: 0.75s;
+            font-size: 20px;
+            z-index: +2;
+            top: 450px;
+            right: 80px;
+            border-bottom: 16px solid rgb(46, 115, 204);
+            border-top: 0px solid rgb(46, 115, 204);
+            border-left: 8px solid rgb(46, 115, 204);
+            border-right: 8px solid rgb(46, 115, 204);
+        }
+        #kite_intro   {
+            transition: 0.75s;
+            animation: text_box;
+            text-align: justify;
+            border-top: 20px solid rgb(46, 115, 204);
+            border-bottom: 10px solid rgb(46, 115, 204);
+            border-radius: 25px 45px 25px 45px;
+            max-width: 150px;
+            max-height: 400px;
+            background-color: #03dac5;
+            margin-top: 50px;
+            margin-right: 30px;
+            padding-top: 20;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            font-size: 8px;
+            font-weight: bold;
+            color: rgb(29, 2, 126);
+            position: absolute;
+            top:550px;
+            opacity: 0.4;
+            right: 480px;
+            list-style-position: inside;
+        }
+        #kite_intro:hover   {
+            opacity: 1;
+            max-height: 450px;
+            max-width: 450px;
+            padding-top: 20px;
+            transition: 0.75s;
+            font-size: 20px;
+            z-index: +2;
+            top: 450px;
+            right: 110px;
+            border-bottom: 16px solid rgb(46, 115, 204);
+            border-left: 10px solid rgb(46, 115, 204);
+            border-top: 0px solid rgb(46, 115, 204);
+        }
+        .wiki   {
+            transition: 0.75s;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .wiki:hover   {
+            transition: 0.75s;
+            font-size: 25px;
+            font-weight: bold;
+            padding-right: 30px;
+        }       
+        #h_one  {
+            position: relative;
+            right: 000px;
+            margin-right: 220px; 
+            color: #0b0b8d;
+            font-weight: bold;
+        }
+        .logo   {
+            position: absolute;
+            top: 90px;
+            right: 150px;
+            top: 20px;
+            width: 150px;
+        }
+        .logo2   {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            position: absolute;
+            right: 450px;
+            top: 20px;
+            width: 150px;
+        }
+        #surf1  {
+            list-style-type: none;
+        }
+        @keyframes text_box {
+             from{
+                opacity: 0;
+                transform: rotateX(-10deg);
+            }
+            to  {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+        
+        @keyframes ul_silde_1 {
+             from{
+                opacity: 0;
+                transform: translatex(300px);
+            }
+            to  {
+                opacity: 1;
+                transform: translatex(000px);
+            }
+        }
+        @keyframes ul_silde_2 {
+             from{
+                opacity: 0;
+                transform: translatex(300px);
+            }
+            to  {
+                opacity: 1;
+                transform: translatex(000px);
+            }
+        }
+        @keyframes ul_silde_3 {
+             from{
+                opacity: 0;
+                transform: translatex(-300px);
+            }
+            to  {
+                opacity: 1;
+                transform: translatex(000px);
+            }
+        }
+        @keyframes ul_silde_4 {
+             from{
+                opacity: 0;
+                transform: translatex(-300px);
+            }
+            to  {
+                opacity: 1;
+                transform: translatex(000px);
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="rotated"></div>
+
+    <div id="reg_bk"></div>
+
+    <div class="logo"><img src="ws_logo.svg" width="60"></div>
+
+    <div class="logo2"><img src="ws_logo.svg" width="60"></div>
+
+    <div id="surfer_div"></div>
+
+    <div id="h_one"><h1>אתר הגולשים של ישראל</h1></div>
+
+    <div><ul id="top_list">
+        <span><a class="list1" id="about" href="url">אודות</a></span>
+        <span><a class="list1" id="gallary" href="url">גלריה</a></span>
+        <span><a class="list1" id="contact" href="url">חופים</a></span>
+        <span><a class="list1" id="signup" href="url">הרשמה</a></span>
+    </ul></div>
+    <p id="ws_intro">"
+    גלישת רוח הוא ענף ספורט ימי אולימפי 
+    המורכב מאלמנטים של גלישה ושיט. גלשן הרוח מורכב מלוח שאורכו 
+    בין שניים לארבעה מטרים, אליו מחובר התורן באמצעות מפרק
+     אוניברסלי - המאפשר לו תנועה חופשית. לתורן מחובר בצורה 
+    אופקית המנור, בעזרתו מותקן המפרש על גבי התורן. שטחי
+     המפרשים עשוי להגיע לבין פחות משלושה מ"ר עד ל-12 מ"ר -
+     בהתאם לתנאי הרוח, למיומנות הגולש ולאופי הגלישה הרצוי."
+    <br>
+        <a class="wiki" href="https://he.wikipedia.org/wiki/%D7%92%D
+        7%9C%D7%99%D7%A9%D7%AA_%D7%A8%D7%95%D7%97">מעבר למאמר - ויקיפדיה</a></li>
+    </p>
+    <p >
+        <ul id="s_intro">
+            <li id="surf1" style="list-style-type:none" >גלישת גלים היא ספורט 
+                גלשן, הגולש עומד על גלשן, הנושא אותו על 
+                פני גל. גלישת הגלים מתבצעת באמצעות גלשני
+                 גלים ייעודיים אשר מחולקים למספר קטגוריות:</li>
+            <li id="surf2" >גלשנים קלאסיים</li>
+            <li id="surf3" >גלשני פאן</li>
+            <li id="surf4" >גלשני גאן(gun)</li>
+            <li id="surf4" style="list-style-type:none">העדויות המוקדמות ביותר לגלישה 
+                הם באיים הפולינזים. כמה מקומות מפורסמים במרכז 
+                אמריקה לגלישת גלים, בהם הגלים נחשבים גדולים מאוד או ארוכים..</li>
+            <a class="wiki" href="https://he.wikipedia.org/wiki/%D7%92%D7%9C%D7%99%D7%A9%D7%AA_%D7%92%D7%9C%D7%99%D7%9D">מעבר למאמר - ויקיפדיה</a>
+        </ul>
+
+
+    </p>
+    <p id="kite_intro">
+        קַיְטסֶרְפִינְג (באנגלית: Kitesurfing או Kiteboarding), גלישת קַיְט, או גל
+        ישת עפיפונים, היא גלישה באמצעות עפיפון מי
+        וחד המנצל את כוח הרוח על מנת להניע את הגו
+        לש על פני המים על גבי גלשן קטן ממדים. גלי
+        שת קיט היא ספורט ימי המתפתח במהירות בעולם
+        . ממציאו של הספורט אינו ידוע, אך הוא הופץ
+         על ידי תושבים מצרפת והוואי בשנת 1999. בחו
+        דש מאי 2012 קבע איגוד השיט העולמי כי גלישת
+         קיט תהפוך למקצוע אולימפי החל מאולימפיאדת
+         ריו דה ז'ניירו (2016) במקום גלשנים מדגם נ
+        יל פרייד RS:X, אך ההחלטה בוטלה כעבור מספר חודשים.[1]
+
+        <br>
+        <a class="wiki" href="https://he.wikipedia.org/wiki/%D7%92%D
+        7%9C%D7%99%D7%A9%D7%AA_%D7%A8%D7%95%D7%97">מעבר למאמר - ויקיפדיה</a>
+    </p>
+
+</body>
+</html>

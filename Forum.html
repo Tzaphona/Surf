@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+    <head >
+        <title>פורום גלישה</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+               
+                // Default, submit button is disabled
+               document.querySelector('#submit').disabled = true;
+
+               document.querySelector('#task').onkeyup = () =>  {
+                    if (document.querySelector('#task').value.length > 0)   {
+                        document.querySelector('#submit').disabled = false;
+
+                    } else {
+                        document.querySelector('#submit').disabled = true;
+                    }    
+               }
+               
+                document.querySelector('form').onsubmit = () => {
+                    const task = document.querySelector('#task').value;
+
+                    const li = document.createElement('li');
+                    li.innerHTML = task;
+
+                    document.querySelector('#tasks').append(li);
+
+                    document.querySelector('#task').value ='';
+                    document.querySelector('#submit').disabled = true;
+                  
+                    
+                    return false;
+                }
+            });
+
+        </script>
+        <style>
+            body    {
+                background-image: url(thinking.jpg),
+                linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+                background-size: 38%,
+                95%;
+                background-repeat: no-repeat,
+                repeat;
+                background-position: bottom left,
+                bottom left;
+            
+            }
+        h1  {
+            margin-right: 200px;
+            color: #111374;
+            font-weight: bold;
+        }
+        div {
+            margin-right: 65px;
+        }
+        #task {
+            margin-right: 65px;
+        }
+        ul     {
+            margin-right: 65PX;
+        }
+        </style>
+    </head>
+<body>
+     - 
+    <h1>פורום הגולשים של ישראל</h1>
+    <div>
+    <h2>שאלה שבועית:</h2>
+    <h2></h2>
+    <h3>לכולם יש העדפות שונות, מהו החוף האהוב אליכם ובאיזה עונה?</h3>
+    <h4>ציינו אם אתם גולשי גלים, רוח, קייט או אחרים</h4>
+    </div>
+    <ul id="tasks">
+        <li>אסף - גולש גלים  במרינה בהרצליה רוב השנה :)</li>
+        <li>ענבר - גולשת קייט - חוף הרכבל בחיפה, בחורף קצת יותר מידי מסוכן.</li>
+        <li>נטע - גולש רוח  - כפר נחום בצפון הכנרת</li>
+
+    </ul>
+    <form>
+        <input id="task" placeholder="הוסף\הוסיפי תגובה" type="text">
+        <input id="submit" type="submit" placeholder="dasd"> 
+
+    </form>
+</body>
+
+
+
+</html>
